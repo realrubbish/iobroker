@@ -23,15 +23,17 @@ Since WiNet-S / WiNet-S2 does not provide reliable data until now we use the ext
 The Hoval Modbus gateway seemed to be too expensive, so we decided to go for a CANbus gateway.
 - Model: [Hoval CAN-Gateway](https://github.com/wladwnt/CAN-Gateway)
 
-### SmartGrid
-Hoval Smart Grid Ready features following options:
-  - `0` Normal
-  - `1` Vorzugsbetrieb
-  - `2` Sperrbetrieb
-  - `3` Abnahmezwang
+### Hoval SmartGrid
+Hoval Smart Grid Ready comes with these options:
 
-From [HovalSmartGrid.pdf](img/HovalSmartGrid.pdf):
-![HovalSmartGridContacts](img/HovalSmartGridContacts.png)
+| Nr  | Description    |
+|-----|----------------|
+| `0` | Normal         |
+| `1` | Vorzugsbetrieb |
+| `2` | Sperrbetrieb   |
+| `3` | Abnahmezwang   |
+
+---
 
 A Shelly 2-Channel Relay was used to control 2 Smart Grid inputs of the Howal Control Unit. Before the inputs are usable they have to be defined:
   - set param=0;1;0;0;38013;w;Ausloeser_Smart_Grid_Funktion to `1` (= Eingangskontakte)
@@ -40,10 +42,19 @@ A Shelly 2-Channel Relay was used to control 2 Smart Grid inputs of the Howal Co
 
 VE1 and VE2 are two ports on the Heatpump controller baord. **TODO**: Add picture 
 
+---
+
+In [HovalSmartGrid.pdf](img/HovalSmartGrid.pdf) it's described how to combine the input contacts and how that effects the components of the heating system:
+
+![HovalSmartGridContacts](img/HovalSmartGridContacts.png)
+
+---
+
 > [!NOTE] 
 > Actually it should be possible to set the smart grid state through CANbus. I can see the registers:
 >  - param=0;1;0;0;38013;w;Ausloeser_Smart_Grid_Funktion;10;U8;1.000000;0.000000;
 >  - param=0;1;0;0;38012;w;Smart_Grid_ueber_Systembus;10;U8;1.000000;0.000000;
+> 
 > But nothing happens when I set the Ausloeser_Smart_Grid_Funktion to `2` (= Systembus) and Smart_Grid_ueber_Systembus to `1`, `2` or `3`. The  
 >
 > If you managed to solve this problem please let me know.
