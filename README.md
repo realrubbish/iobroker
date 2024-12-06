@@ -40,9 +40,9 @@ A Shelly 2-Channel Relay was used to control 2 Smart Grid inputs of the Howal Co
 
 VE1 and VE2 are two ports on the Heatpump controller baord. **TODO**: Add picture 
 
-:warning: Actually it should be possible to set the smart grid state through CANbus. I can see the registers:
-  - param=0;1;0;0;38013;w;Ausloeser_Smart_Grid_Funktion;10;U8;1.000000;0.000000;
-  - param=0;1;0;0;38012;w;Smart_Grid_ueber_Systembus;10;U8;1.000000;0.000000;
-But nothing happens when I set the Ausloeser_Smart_Grid_Funktion to `2` (= Systembus) and Smart_Grid_ueber_Systembus to `1`, `2` or `3`. The  
-
-If you managed to solve this problem please let me know.
+> [!NOTE] Actually it should be possible to set the smart grid state through CANbus. I can see the registers:
+>  - param=0;1;0;0;38013;w;Ausloeser_Smart_Grid_Funktion;10;U8;1.000000;0.000000;
+>  - param=0;1;0;0;38012;w;Smart_Grid_ueber_Systembus;10;U8;1.000000;0.000000;
+> But nothing happens when I set the Ausloeser_Smart_Grid_Funktion to `2` (= Systembus) and Smart_Grid_ueber_Systembus to `1`, `2` or `3`. The  
+>
+> If you managed to solve this problem please let me know.
